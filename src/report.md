@@ -571,3 +571,103 @@ ws11:
 `sudo dhclient` - to get a new ip address
 
 ![linux](src/images/Part_6/linux6.0-14.png)
+
+
+## Part 7. NAT ##
+
+**== Task ==**
+
+**In _/etc/apache2/ports.conf_ file change the line `Listen 80` to `Listen 0.0.0.0:80` on ws22 and r1, i.e. make the Apache2 server public**
+
+![linux](src/images/Part_7/linux7.0-1.png)
+
+![linux](src/images/Part_7/linux7.0-2.png)
+
+**Start the Apache web server with service apache2 start command on ws22 and r1**
+
+![linux](src/images/Part_7/linux7.0-3.png)
+
+![linux](src/images/Part_7/linux7.0-4.png)
+
+**Add the following rules to the firewall, created similarly to the firewall from Part 4, on r2:**
+
+**1. delete rules in the filter table - `iptables -F`**
+
+**2. delete rules in the "NAT" table - `iptables -F -t nat`**
+
+**3. drop all routed packets - `iptables --policy FORWARD DROP`**
+
+![linux](src/images/Part_7/linux7.0-5.png)
+
+**Run the file as in Part 4**
+
+![linux](src/images/Part_7/linux7.0-6.png)
+
+**Check the connection between ws22 and r1 with the _ping_ command**
+
+_When running the file with these rules, ws22 should not ping from r1_
+
+![linux](src/images/Part_7/linux7.0-7.png)
+
+**Add another rule to the file:**
+
+**4. allow routing of all ICMP protocol packets**
+
+![linux](src/images/Part_7/linux7.0-8.png)
+
+**Run the file as in Part 4**
+
+![linux](src/images/Part_7/linux7.0-9.png)
+
+**Check connection between ws22 and r1 with the `ping` command**
+
+_When running the file with these rules, ws22 should ping from r1_
+
+![linux](src/images/Part_7/linux7.0-10.png)
+
+**Add two more rules to the file:**
+
+**5. enable SNAT, which is masquerade all local ip from the local network behind r2 (as defined in Part 5 - network 10.20.0.0)**
+
+_Tip: it is worth thinking about routing internal packets as well as external packets with an established connection_
+
+**6. enable DNAT on port 8080 of r2 machine and add external network access to the Apache web server running on ws22**
+
+*Tip: be aware that when you will try to connect, there will be a new tcp connection for ws22 and port 80
+
+![linux](src/images/Part_7/linux7.0-11.png)
+
+**Run the file as in Part 4**
+
+_Before testing it is recommended to disable the NAT network interface in VirtualBox (its presence can be checked with `ip a` command), if it is enabled_
+
+**Check the TCP connection for SNAT by connecting from ws22 to the Apache server on r1 with the `telnet [address] [port]` command**
+
+![linux](src/images/Part_7/linux7.0-12.png)
+
+**Check the TCP connection for DNAT by connecting from r1 to the Apache server on ws22 with the `telnet` command (address r2 and port 8080)**
+
+![linux](src/images/Part_7/linux7.0-13.png)
+
+
+## Part 8. Bonus. Introduction to SSH Tunnels ##
+
+**==Task==**
+
+**Run a firewall on r2 with the rules from Part 7**
+
+**Start the Apapche web server on ws22 on localhost only (i.e. in _/etc/apache2/ports.conf_ file change the line `Listen 80` to `Listen localhost:80`)**
+
+![linux](src/images/Part_8/linux8.0-1.png)
+
+**Use _Local TCP forwarding_ from ws21 to ws22 to access the web server on ws22 from ws21**
+
+![linux](src/images/Part_8/linux8.0-2.png)
+
+**Use _Remote TCP forwarding_ from ws11 to ws22 to access the web server on ws22 from ws11**
+
+![linux](src/images/Part_8/linux8.0-3.png)
+
+**To check if the connection worked in both of the previous steps, go to a second terminal (e.g. with the Alt + F2) and run the `telnet 127.0.0.1 [local port]` command.**
+
+![linux](src/images/Part_8/linux8.0-4.png)
