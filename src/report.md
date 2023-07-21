@@ -662,9 +662,13 @@ _Before testing it is recommended to disable the NAT network interface in Virtua
 
 **Use _Local TCP forwarding_ from ws21 to ws22 to access the web server on ws22 from ws21**
 
+`ssh -L 8080:localhost:80 fletamar@10.20.0.20` - Local port forwarding. Sets up an encrypted SSH connetnction to the remote server at IP address 10.20.0.20(ws22) from ws21
+
 ![linux](src/images/Part_8/linux8.0-2.png)
 
 **Use _Remote TCP forwarding_ from ws11 to ws22 to access the web server on ws22 from ws11**
+
+`ssh -R 8080:localhost:80 fletamar@10.20.0.20` - Remote port forwarding. Sets up en encrypted SSH connection to the remote server at IP address 10.20.0.20(ws22) from ws11.
 
 ![linux](src/images/Part_8/linux8.0-3.png)
 
