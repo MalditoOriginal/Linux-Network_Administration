@@ -12,7 +12,7 @@
 
     Address: 192.160.0.0
 
-![linux](/images/Part_1/linux1.1-1.png)
+!(src/images/Part_1/linux1.1-1.png)
 
 **2. Conversion of the mask 255.255.255.0 to prefix and binary, /15 to normal and binary, 11111111.11111111.11111111.11110000 to normal and prefix**
 
