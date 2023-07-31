@@ -40,7 +40,7 @@ a. Mask (/8)
 
 `$ ipcalc 12.167.38.4/8`
 
-![linux](src/images/Part_1/linux1.1-3a.png)
+![linux](/src/images/Part_1/linux1.1-3a.png)
 
     HostMin:   12.0.0.1             00001100. 00000000.00000000.00000001
     HostMax:   12.255.255.254       00001100. 11111111.11111111.11111110
@@ -49,7 +49,7 @@ b. Mask 11111111.11111111.00000000.00000000 (/16)
 
 `$ ipcalc 12.167.38.4/16`
 
-![linux](src/images/Part_1/linux1.1-3b.png)
+![linux](/src/images/Part_1/linux1.1-3b.png)
 
     HostMin:   12.167.0.1           00001100.10100111. 00000000.00000001
     HostMax:   12.167.255.254       00001100.10100111. 11111111.11111110
@@ -58,7 +58,7 @@ c. Mask 255.255.254.0 (/23)
 
 `$ ipcalc 12.167.38.4/255.255.254.0`
 
-![linux](src/images/Part_1/linux1.1-3c.png)
+![linux](/src/images/Part_1/linux1.1-3c.png)
 
     HostMin:   12.167.38.1          00001100.10100111.0010011 0.00000001
     HostMax:   12.167.39.254        00001100.10100111.0010011 1.11111110
@@ -67,7 +67,7 @@ d. Mask (/4)
 
 `$ ipcalc 12.167.38.4/4`
 
-![linux](src/images/Part_1/linux1.1-3d.png)
+![linux](/src/images/Part_1/linux1.1-3d.png)
 
     HostMin:   0.0.0.1              0000 0000.00000000.00000000.00000001
     HostMax:   15.255.255.254       0000 1111.11111111.11111111.11111110
@@ -107,41 +107,41 @@ d. Mask (/4)
 - Private IPs:
     - 10.0.0.45
 
-    ![linux](src/images/Part_1/linux1.3-1.png)
+    ![linux](/src/images/Part_1/linux1.3-1.png)
 
     - 192.168.4.2
 
-    ![linux](src/images/Part_1/linux1.3-3.png)
+    ![linux](/src/images/Part_1/linux1.3-3.png)
 
     - 172.20.250.4
 
-    ![linux](src/images/Part_1/linux1.3-4.png)
+    ![linux](/src/images/Part_1/linux1.3-4.png)
 
      - 172.16.255.255
 
-    ![linux](src/images/Part_1/linux1.3-7.png)
+    ![linux](/src/images/Part_1/linux1.3-7.png)
 
     - 10.10.10.10
 
-    ![linux](src/images/Part_1/linux1.3-8.png)
+    ![linux](/src/images/Part_1/linux1.3-8.png)
 
 - Public IPs:
 
     - 134.43.0.2:
 
-    ![linux](src/images/Part_1/linux1.3-2.png)    
+    ![linux](/src/images/Part_1/linux1.3-2.png)    
 
     - 192.172.0.1
 
-    ![linux](src/images/Part_1/linux1.3-5.png)
+    ![linux](/src/images/Part_1/linux1.3-5.png)
 
     - 172.68.0.2
 
-    ![linux](src/images/Part_1/linux1.3-6.png)
+    ![linux](/src/images/Part_1/linux1.3-6.png)
 
     - 192.169.168.1
 
-    ![linux](src/images/Part_1/linux1.3-9.png)
+    ![linux](/src/images/Part_1/linux1.3-9.png)
 
 
 **2. Which of the listed gateway IP addresses are possible for 10.10.0.0/18 network: 10.0.0.1, 10.10.0.2, 10.10.10.10, 10.10.100.1, 10.10.1.255**
@@ -158,7 +158,7 @@ d. Mask (/4)
 
     - 10.0.0.1; 10.10.100.1
 
-    ![linux](src/images/Part_1/linux1.3-10.png)
+    ![linux](/src/images/Part_1/linux1.3-10.png)
 ## Part 2. Static rounting between two machines ##
 
 **== Task ==**
@@ -169,7 +169,7 @@ View existing network interfaces with the `$ ip` a command
 
 ws1:
 
-![linux](src/images/Part_2/linux2.0-1.png)
+![linux](/src/images/Part_2/linux2.0-1.png)
 
 ws2:
 
@@ -179,21 +179,21 @@ _etc/netplan/00-installer-config.yaml_
 
 ws1:
 
-![linux](src/images/Part_2/linux2.0-3.png)
+![linux](/src/images/Part_2/linux2.0-3.png)
 
 ws2:
 
-![linux](src/images/Part_2/linux2.0-4.png)
+![linux](/src/images/Part_2/linux2.0-4.png)
 
 **Run the `netplan apply` command to restart the network service**
 
 ws1:
 
-![linux](src/images/Part_2/linux2.0-5.png)
+![linux](/src/images/Part_2/linux2.0-5.png)
 
 ws2:
 
-![linux](src/images/Part_2/linux2.0-6.png)
+![linux](/src/images/Part_2/linux2.0-6.png)
 
 ### 2.1. Adding a static route manually ###
 
@@ -207,7 +207,7 @@ ws1:
 
 `ping 172.24.116.8`
 
-![linux](src/images/Part_2/linux2.1-1.png)
+![linux](/src/images/Part_2/linux2.1-1.png)
 
 ws2:
 
@@ -215,7 +215,7 @@ ws2:
 
 `ping 192.168.100.10`
 
-![linux](src/images/Part_2/linux2.1-2.png)
+![linux](/src/images/Part_2/linux2.1-2.png)
 
 ### 2.2. Adding a static route with saving ###
 
@@ -225,21 +225,21 @@ ws2:
 
 ws1:
 
-![linux](src/images/Part_2/linux2.2-1.png)
+![linux](/src/images/Part_2/linux2.2-1.png)
 
 ws2:
 
-![linux](src/images/Part_2/linux2.2-2.png)
+![linux](/src/images/Part_2/linux2.2-2.png)
 
 **Ping the connection between the machines**
 
 ws1:
 
-![linux](src/images/Part_2/linux2.2-3.png)
+![linux](/src/images/Part_2/linux2.2-3.png)
 
 ws2:
 
-![linux](src/images/Part_2/linux2.2-4.png)
+![linux](/src/images/Part_2/linux2.2-4.png)
 
 ## Part 3. iperf3 utility ##
 
@@ -259,9 +259,9 @@ ws2:
 
 Let's assign the role of a server to ws1 using the command `iperf3 -s`, and the role of a client to ws2 using the command `iperf3 -c 192.168.100.10`.
 
-![linux](src/images/Part_3/linux3.2-1.png)
+![linux](/src/images/Part_3/linux3.2-1.png)
 
-![linux](src/images/Part_3/linux3.2-2.png)
+![linux](/src/images/Part_3/linux3.2-2.png)
 
 >Result - 4.99 Gbits/sec.
 
@@ -300,17 +300,17 @@ ws2:
 
 _/etc/firewall.sh_ 
 
-![linux](src/images/Part_4/linux4.1-1.png)
+![linux](/src/images/Part_4/linux4.1-1.png)
 
-![linux](src/images/Part_4/linux4.1-2.png)
+![linux](/src/images/Part_4/linux4.1-2.png)
 
 **Run the files on both machines with `chmod +x /etc/firewall.sh` and `/etc/firewall.sh` commands.**
 
 `sudo iptables -L --line-number`
 
-![linux](src/images/Part_4/linux4.1-3.png)
+![linux](/src/images/Part_4/linux4.1-3.png)
 
-![linux](src/images/Part_4/linux4.1-4.png)
+![linux](/src/images/Part_4/linux4.1-4.png)
 
     Оба файла, ws1 и ws2, содержат набор команд iptables, которые управляют правилами брандмауэра. Целью этих команд является настройка брандмауэра на двух различных рабочих станциях (ws1 и ws2) для разрешения определенного входящего и исходящего трафика, а также блокирования определенных типов ICMP-трафика (ответов на запрос эхо). Однако существует небольшое различие в определении правил между двумя файлами.
 
@@ -318,9 +318,9 @@ _/etc/firewall.sh_
 
     Основное различие между двумя стратегиями заключается в том, что в ws1 присутствует избыточное правило для разрешения исходящих пакетов ICMP ответов на запросы эхо, тогда как в ws2 это избыточное правило удаляется с помощью iptables -I для вставки разрешающего правила перед правилом блокировки.
 
-![linux](src/images/Part_4/linux4.1-5.png)
+![linux](/src/images/Part_4/linux4.1-5.png)
 
-![linux](src/images/Part_4/linux4.1-6.png)
+![linux](/src/images/Part_4/linux4.1-6.png)
 
 ## 4.2. nmap utility ##
 
@@ -328,21 +328,21 @@ _/etc/firewall.sh_
 
 `sudo ping -c 10 172.24.116.8`
 
-![linux](src/images/Part_4/linux4.2-1.png)
+![linux](/src/images/Part_4/linux4.2-1.png)
 
 `sudo ping -c 10 192.168.100.10`
 
-![linux](src/images/Part_4/linux4.2-2.png)
+![linux](/src/images/Part_4/linux4.2-2.png)
 
 _Check: nmap output should say: `Host is up`._
 
 `sudo nmap -sS 192.168.100.10`
 
-![linux](src/images/Part_4/linux4.2-3.png)
+![linux](/src/images/Part_4/linux4.2-3.png)
 
 `sudo nmap -sS 172.24.116.8`
 
-![linux](src/images/Part_4/linux4.2-4.png)
+![linux](/src/images/Part_4/linux4.2-4.png)
 
 
 ## Part 5. Static network routing ##
@@ -361,15 +361,15 @@ Network:
 
 `sudo vim /etc/netplan/00-installer-config.yaml`
 
-![linux](src/images/Part_5/linux5.1-1.png)
+![linux](/src/images/Part_5/linux5.1-1.png)
 
-![linux](src/images/Part_5/linux5.1-2.png)
+![linux](/src/images/Part_5/linux5.1-2.png)
 
-![linux](src/images/Part_5/linux5.1-3.png)
+![linux](/src/images/Part_5/linux5.1-3.png)
 
-![linux](src/images/Part_5/linux5.1-4.png)
+![linux](/src/images/Part_5/linux5.1-4.png)
 
-![linux](src/images/Part_5/linux5.1-5.png)
+![linux](/src/images/Part_5/linux5.1-5.png)
 
 **Restart the network service. If there are no errors, check that the machine address is correct with the `ip -4` acommand. Also ping ws22 from ws21. Similarly ping r1 from ws11.**
 
@@ -377,23 +377,23 @@ Network:
 
 `ip -4 a`
 
-![linux](src/images/Part_5/linux5.1-6.png)
+![linux](/src/images/Part_5/linux5.1-6.png)
 
-![linux](src/images/Part_5/linux5.1-7.png)
+![linux](/src/images/Part_5/linux5.1-7.png)
 
-![linux](src/images/Part_5/linux5.1-8.png)
+![linux](/src/images/Part_5/linux5.1-8.png)
 
-![linux](src/images/Part_5/linux5.1-9.png)
+![linux](/src/images/Part_5/linux5.1-9.png)
 
-![linux](src/images/Part_5/linux5.1-10.png)
+![linux](/src/images/Part_5/linux5.1-10.png)
 
 `ping -c 10 10.20.0.20`
 
-![linux](src/images/Part_5/linux5.1-11.png)
+![linux](/src/images/Part_5/linux5.1-11.png)
 
 `ping -c 10 10.10.0.1`
 
-![linux](src/images/Part_5/linux5.1-12.png)
+![linux](/src/images/Part_5/linux5.1-12.png)
 
 ### 5.2. Enabling IP forwarding. ###
 
@@ -403,17 +403,17 @@ Network:
 
 _With this approach, the forwarding will not work after the system is rebooted._
 
-![linux](src/images/Part_5/linux5.2-1.png)
+![linux](/src/images/Part_5/linux5.2-1.png)
 
-![linux](src/images/Part_5/linux5.2-2.png)
+![linux](/src/images/Part_5/linux5.2-2.png)
 
 **Open /etc/sysctl.conf file and add the following line:**
 
 `net.ipv4.ip_forward = 1` _With this approach, IP forwarding is enabled permanently._
 
-![linux](src/images/Part_5/linux5.2-3.png)
+![linux](/src/images/Part_5/linux5.2-3.png)
 
-![linux](src/images/Part_5/linux5.2-4.png)
+![linux](/src/images/Part_5/linux5.2-4.png)
 
 ### 5.3. Default route configuration ###
 
@@ -421,44 +421,44 @@ _With this approach, the forwarding will not work after the system is rebooted._
 
 `etc/netplan/00-installer-config.yaml`
 
-![linux](src/images/Part_5/linux5.3-1.png)
+![linux](/src/images/Part_5/linux5.3-1.png)
 
-![linux](src/images/Part_5/linux5.3-2.png)
+![linux](/src/images/Part_5/linux5.3-2.png)
 
-![linux](src/images/Part_5/linux5.3-3.png)
+![linux](/src/images/Part_5/linux5.3-3.png)
 
 **Call `ip r` and show that a route is added to the routing table**
 
-![linux](src/images/Part_5/linux5.3-4.png)
+![linux](/src/images/Part_5/linux5.3-4.png)
 
-![linux](src/images/Part_5/linux5.3-5.png)
+![linux](/src/images/Part_5/linux5.3-5.png)
 
-![linux](src/images/Part_5/linux5.3-6.png)
+![linux](/src/images/Part_5/linux5.3-6.png)
 
 **Ping r2 router from ws11 and show on r2 that the ping is reaching. To do this, use the `tcpdump -tn -i eth1`**
 **command.**
 
-![linux](src/images/Part_5/linux5.3-7.png)
+![linux](/src/images/Part_5/linux5.3-7.png)
 
-![linux](src/images/Part_5/linux5.3-8.png)
+![linux](/src/images/Part_5/linux5.3-8.png)
 
 ### 5.4. Adding static routes ###
 
 **Add static routes to r1 and r2 in configuration file. Here is an example for r1 route to 10.20.0.0/26:**
 
-![linux](src/images/Part_5/linux5.4-1.png)
+![linux](/src/images/Part_5/linux5.4-1.png)
 
-![linux](src/images/Part_5/linux5.4-2.png)
+![linux](/src/images/Part_5/linux5.4-2.png)
 
 **Call ip r and show route tables on both routers.**
 
-![linux](src/images/Part_5/linux5.4-3.png)
+![linux](/src/images/Part_5/linux5.4-3.png)
 
-![linux](src/images/Part_5/linux5.4-4.png)
+![linux](/src/images/Part_5/linux5.4-4.png)
 
 **Run `ip r list 10.10.0.0/[netmask]` and `ip r list 0.0.0.0/0` commands on ws11.**
 
-![linux](src/images/Part_5/linux5.4-5.png)
+![linux](/src/images/Part_5/linux5.4-5.png)
 
 Маршрут 0.0.0.0/0 в таблице маршрутизации используется, когда хост не знает, куда отправить пакеты, которые не соответствуют более конкретным маршрутам. Однако, если хост имеет более конкретный маршрут для определенной сети, например, 10.10.0.0/18, он будет использовать этот маршрут вместо маршрута по умолчанию. Это позволяет хосту самостоятельно обрабатывать трафик для конкретных сетей и уменьшает нагрузку на маршрутизаторы.
 
@@ -468,11 +468,11 @@ _With this approach, the forwarding will not work after the system is rebooted._
 
 `sudo tcpdump -tnv -i enp0s8`
 
-![linux](src/images/Part_5/linux5.5-1.png)
+![linux](/src/images/Part_5/linux5.5-1.png)
 
 **Use traceroute utility to list routers in the path from ws11 to ws21**
 
-![linux](src/images/Part_5/linux5.5-2.png)
+![linux](/src/images/Part_5/linux5.5-2.png)
 
 
 Каждый пакет имеет ограниченное количество промежуточных узлов, которые он может проходить на своем пути к целевой точке. Это количество узлов определяется значением TTL (Time to Live) в заголовке пакета. Каждый промежуточный маршрутизатор, через который проходит пакет, уменьшает значение TTL на один. Когда TTL достигает нуля, пакет уничтожается, и отправителю возвращается сообщение Time Exceeded, указывающее, что пакет превысил свое время жизни.
@@ -487,13 +487,13 @@ _With this approach, the forwarding will not work after the system is rebooted._
 
 **Run on r1 network traffic capture going through eth0 with the `tcpdump -n -i eth0 icmp` command.**
 
-![linux](src/images/Part_5/linux5.6-1.png)
+![linux](/src/images/Part_5/linux5.6-1.png)
 
 **Ping a non-existent IP (e.g. 10.30.0.111) from ws11 with the**
 
 `ping -c 1 10.100.1.67`
 
-![linux](src/images/Part_5/linux5.6-2.png)
+![linux](/src/images/Part_5/linux5.6-2.png)
 
 
 ## Part 6. Dynamic IP configuration using DHCP ##
@@ -504,53 +504,53 @@ _With this approach, the forwarding will not work after the system is rebooted._
 
 **1. Specify the default router address, DNS-server and internal network address.Here is an example of a file for r2:**
 
-![linux](src/images/Part_6/linux6.0-1.png)
+![linux](/src/images/Part_6/linux6.0-1.png)
 
 **2. Write nameserver `8.8.8.8` in a _resolv.conf_ file**
 
-![linux](src/images/Part_6/linux6.0-2.png)
+![linux](/src/images/Part_6/linux6.0-2.png)
 
 **Restart the DHCP service with `systemctl restart isc-dhcp-server`. Reboot the ws21 machine with `reboot` and show with `ip a` that it has got an address. Also ping ws22 from ws21.**
 
-![linux](src/images/Part_6/linux6.0-3.png)
+![linux](/src/images/Part_6/linux6.0-3.png)
 
-![linux](src/images/Part_6/linux6.0-4.png)
+![linux](/src/images/Part_6/linux6.0-4.png)
 
-![linux](src/images/Part_6/linux6.0-5.png)
+![linux](/src/images/Part_6/linux6.0-5.png)
 
 **Specify MAC address at ws11 by adding to _etc/netplan/00-installer-config.yaml_:**
 
 `macaddress: 10:10:10:10:10:BA`, `dhcp4: true`
 
-![linux](src/images/Part_6/linux6.0-6.png)
+![linux](/src/images/Part_6/linux6.0-6.png)
 
 **Сonfigure r1 the same way as r2, but make the assignment of addresses strictly linked to the MAC-address (ws11). Run the same tests**
 
 r1:
 
-![linux](src/images/Part_6/linux6.0-7.png)
+![linux](/src/images/Part_6/linux6.0-7.png)
 
-![linux](src/images/Part_6/linux6.0-8.png)
+![linux](/src/images/Part_6/linux6.0-8.png)
 
-![linux](src/images/Part_6/linux6.0-9.png)
+![linux](/src/images/Part_6/linux6.0-9.png)
 
 ws11:
 
-![linux](src/images/Part_6/linux6.0-10.png)
+![linux](/src/images/Part_6/linux6.0-10.png)
 
-![linux](src/images/Part_6/linux6.0-11.png)
+![linux](/src/images/Part_6/linux6.0-11.png)
 
 **Request ip address update from ws21**
 
-![linux](src/images/Part_6/linux6.0-12.png)
+![linux](/src/images/Part_6/linux6.0-12.png)
 
 `sudo dhclient -r enp0s8` - to reset old address on the enp0s8 interface
 
-![linux](src/images/Part_6/linux6.0-13.png)
+![linux](/src/images/Part_6/linux6.0-13.png)
 
 `sudo dhclient` - to get a new ip address
 
-![linux](src/images/Part_6/linux6.0-14.png)
+![linux](/src/images/Part_6/linux6.0-14.png)
 
 
 ## Part 7. NAT ##
@@ -559,15 +559,15 @@ ws11:
 
 **In _/etc/apache2/ports.conf_ file change the line `Listen 80` to `Listen 0.0.0.0:80` on ws22 and r1, i.e. make the Apache2 server public**
 
-![linux](src/images/Part_7/linux7.0-1.png)
+![linux](/src/images/Part_7/linux7.0-1.png)
 
-![linux](src/images/Part_7/linux7.0-2.png)
+![linux](/src/images/Part_7/linux7.0-2.png)
 
 **Start the Apache web server with service apache2 start command on ws22 and r1**
 
-![linux](src/images/Part_7/linux7.0-3.png)
+![linux](/src/images/Part_7/linux7.0-3.png)
 
-![linux](src/images/Part_7/linux7.0-4.png)
+![linux](/src/images/Part_7/linux7.0-4.png)
 
 **Add the following rules to the firewall, created similarly to the firewall from Part 4, on r2:**
 
@@ -577,33 +577,33 @@ ws11:
 
 **3. drop all routed packets - `iptables --policy FORWARD DROP`**
 
-![linux](src/images/Part_7/linux7.0-5.png)
+![linux](/src/images/Part_7/linux7.0-5.png)
 
 **Run the file as in Part 4**
 
-![linux](src/images/Part_7/linux7.0-6.png)
+![linux](/src/images/Part_7/linux7.0-6.png)
 
 **Check the connection between ws22 and r1 with the _ping_ command**
 
 _When running the file with these rules, ws22 should not ping from r1_
 
-![linux](src/images/Part_7/linux7.0-7.png)
+![linux](/src/images/Part_7/linux7.0-7.png)
 
 **Add another rule to the file:**
 
 **4. allow routing of all ICMP protocol packets**
 
-![linux](src/images/Part_7/linux7.0-8.png)
+![linux](/src/images/Part_7/linux7.0-8.png)
 
 **Run the file as in Part 4**
 
-![linux](src/images/Part_7/linux7.0-9.png)
+![linux](/src/images/Part_7/linux7.0-9.png)
 
 **Check connection between ws22 and r1 with the `ping` command**
 
 _When running the file with these rules, ws22 should ping from r1_
 
-![linux](src/images/Part_7/linux7.0-10.png)
+![linux](/src/images/Part_7/linux7.0-10.png)
 
 **Add two more rules to the file:**
 
@@ -615,7 +615,7 @@ _Tip: it is worth thinking about routing internal packets as well as external pa
 
 *Tip: be aware that when you will try to connect, there will be a new tcp connection for ws22 and port 80
 
-![linux](src/images/Part_7/linux7.0-11.png)
+![linux](/src/images/Part_7/linux7.0-11.png)
 
 **Run the file as in Part 4**
 
@@ -623,11 +623,11 @@ _Before testing it is recommended to disable the NAT network interface in Virtua
 
 **Check the TCP connection for SNAT by connecting from ws22 to the Apache server on r1 with the `telnet [address] [port]` command**
 
-![linux](src/images/Part_7/linux7.0-12.png)
+![linux](/src/images/Part_7/linux7.0-12.png)
 
 **Check the TCP connection for DNAT by connecting from r1 to the Apache server on ws22 with the `telnet` command (address r2 and port 8080)**
 
-![linux](src/images/Part_7/linux7.0-13.png)
+![linux](/src/images/Part_7/linux7.0-13.png)
 
 
 ## Part 8. Bonus. Introduction to SSH Tunnels ##
@@ -638,20 +638,20 @@ _Before testing it is recommended to disable the NAT network interface in Virtua
 
 **Start the Apapche web server on ws22 on localhost only (i.e. in _/etc/apache2/ports.conf_ file change the line `Listen 80` to `Listen localhost:80`)**
 
-![linux](src/images/Part_8/linux8.0-1.png)
+![linux](/src/images/Part_8/linux8.0-1.png)
 
 **Use _Local TCP forwarding_ from ws21 to ws22 to access the web server on ws22 from ws21**
 
 `ssh -L 8080:localhost:80 fletamar@10.20.0.20` - Local port forwarding. Sets up an encrypted SSH connetnction to the remote server at IP address 10.20.0.20(ws22) from ws21
 
-![linux](src/images/Part_8/linux8.0-2.png)
+![linux](/src/images/Part_8/linux8.0-2.png)
 
 **Use _Remote TCP forwarding_ from ws11 to ws22 to access the web server on ws22 from ws11**
 
 `ssh -R 8080:localhost:80 fletamar@10.20.0.20` - Remote port forwarding. Sets up en encrypted SSH connection to the remote server at IP address 10.20.0.20(ws22) from ws11.
 
-![linux](src/images/Part_8/linux8.0-3.png)
+![linux](/src/images/Part_8/linux8.0-3.png)
 
 **To check if the connection worked in both of the previous steps, go to a second terminal (e.g. with the Alt + F2) and run the `telnet 127.0.0.1 [local port]` command.**
 
-![linux](src/images/Part_8/linux8.0-4.png)
+![linux](/src/images/Part_8/linux8.0-4.png)
