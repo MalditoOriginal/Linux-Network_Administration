@@ -36,7 +36,7 @@ c. Conversion of 11111111.11111111.11111111.11110000 to normal and prefix:
 
 3. Minimum and maximum host in 12.167.38.4 network with masks: /8, 11111111.11111111.00000000.00000000, 255.255.254.0 and /4
 
-a. Mask /8
+a. Mask (/8)
 
 `$ ipcalc 12.167.38.4/8`
 
@@ -63,7 +63,7 @@ c. Mask 255.255.254.0 (/23)
     HostMin:   12.167.38.1          00001100.10100111.0010011 0.00000001
     HostMax:   12.167.39.254        00001100.10100111.0010011 1.11111110
 
-d. Mask /4
+d. Mask (/4)
 
 `$ ipcalc 12.167.38.4/4`
 
@@ -79,23 +79,22 @@ d. Mask /4
 
     Термин "localhost" относится к интерфейсу loopback устройства, обычно идентифицируемому IP-адресом 127.0.0.1. Он используется для тестирования сетевого подключения на локальной машине без участия внешней сети. Когда приложение привязано к адресу localhost, оно может быть доступно только из того же устройства.
 
->a. 194.34.23.100:
->IP-адрес 194.34.23.100 не соответствует адресу localhost. Это обычный IP-адрес, связанный с определенной сетью. Поэтому приложение, >работающее на localhost, не будет доступно через этот IP-адрес.
+>a. 194.34.23.100: IP-адрес 194.34.23.100 не соответствует адресу localhost. Это обычный IP-адрес, связанный с определенной сетью. Поэтому приложение, работающее на localhost, не будет доступно через этот IP-адрес.
 
 >b. 127.0.0.2:
 >IP-адрес 127.0.0.2 находится в диапазоне адресов localhost. Приложение, >работающее на localhost, будет доступно через 127.0.0.2.
 
 >c. 127.1.0.1:
->IP-адрес 127.1.0.1 также находится в диапазоне адресов localhost. В этом случае он попадает в допустимые IP-адреса интерфейса loopback (127.>0.0.1 - 127.255.255.254). Поэтому приложение, работающее на localhost, может быть доступно с использованием IP-адреса 127.1.0.1.
+>IP-адрес 127.1.0.1 также находится в диапазоне адресов localhost. В этом случае он попадает в допустимые IP-адреса интерфейса loopback (127.0.0.1 - 127.255.255.254). Поэтому приложение, работающее на localhost, может быть доступно с использованием IP-адреса 127.1.0.1.
 
 >d. 128.0.0.1:
->IP-адрес 128.0.0.1 не находится в диапазоне адресов localhost (127.x.x.x). Это обычный IP-адрес, который не относится к интерфейсу >loopback. Поэтому приложение, работающее на localhost, не будет доступно через этот IP-адрес.
+>IP-адрес 128.0.0.1 не находится в диапазоне адресов localhost (127.x.x.x). Это обычный IP-адрес, который не относится к интерфейсу loopback. Поэтому приложение, работающее на localhost, не будет доступно через этот IP-адрес.
 
 ### 1.3. Network ranges and segments ###
 
 **Define and write in a report:**
 
-1. Which of the listed IPs can be used as public and which only as private: 10.0.0.45, 134.43.0.2, 192.168.4.2, 172.20.250.4, 172.0.2.1, 192.172.0.1, 172.68.0.2, 172.16.255.255, 10.10.10.10, 192.169.168.1
+**1. Which of the listed IPs can be used as public and which only as private: 10.0.0.45, 134.43.0.2, 192.168.4.2, 172.20.250.4, 172.0.2.1, 192.172.0.1, 172.68.0.2, 172.16.255.255, 10.10.10.10, 192.169.168.1**
 
     Приватные IP-адреса зарезервированы для внутренних сетей и не могут быть маршрутизируемыми через интернет. Они обычно используются в локальных сетях (например, домашних или офисных сетях) и не могут быть непосредственно доступными из интернета. С другой стороны, публичные IP-адреса являются глобально маршрутизируемыми и могут быть доступными из интернета.
 
@@ -145,7 +144,7 @@ d. Mask /4
     ![linux](src/images/Part_1/linux1.3-9.png)
 
 
-2. Which of the listed gateway IP addresses are possible for 10.10.0.0/18 network: 10.0.0.1, 10.10.0.2, 10.10.10.10, 10.10.100.1, 10.10.1.255
+**2. Which of the listed gateway IP addresses are possible for 10.10.0.0/18 network: 10.0.0.1, 10.10.0.2, 10.10.10.10, 10.10.100.1, 10.10.1.255**
 
     Сетевой адрес 10.10.0.0/18 представляет собой сеть с маской подсети 255.255.192.0. Это означает, что первые 18 бит в IP-адресе представляют сеть, а оставшиеся биты доступны для адресации узлов.
 
@@ -174,21 +173,6 @@ ws1:
 
 ws2:
 
-# This is the network config written by 'subiquity'
-network:
-  ethernets:
-    enp0s3:
-      dhcp4: true
-    enp0s8:
-      dhcp4: false
-      addresses: [172.24.116.8/12]
-      routes:
-        - to: 192.168.100.10
-          via: 172.24.116.8
-  version: 2
-
-![linux](src/images/Part_2/linux2.0-2.png)
-
 **Describe the network interface corresponding to the internal network on both machines and set the following addresses and masks: ws1 - 192.168.100.10, mask */16 *, ws2 - 172.24.116.8, mask /12**
 
 _etc/netplan/00-installer-config.yaml_
@@ -201,7 +185,7 @@ ws2:
 
 ![linux](src/images/Part_2/linux2.0-4.png)
 
-**Run the netplan apply command to restart the network service**
+**Run the `netplan apply` command to restart the network service**
 
 ws1:
 
@@ -296,11 +280,6 @@ ws1:
         iptables -F
         iptables –X
 
-        iptables -A INPUT -p tcp --sport 22 -j ACCEPT
-        iptables -A INPUT -p tcp --sport 80 -j ACCEPT
-        iptables -A OUTPUT -p icmp --icmp-type echo-reply -j DROP
-        iptables -A OUTPUT -p icmp --icmp-type echo-reply -j ACCEPT
-
 ws2:
 
         #!/bin/sh
@@ -308,21 +287,16 @@ ws2:
         iptables -F
         iptables –X
 
-        iptables -A INPUT -p tcp --sport 22 -j ACCEPT
-        iptables -A INPUT -p tcp --sport 80 -j ACCEPT
-        iptables -A OUTPUT -p icmp --icmp-type echo-reply -j DROP
-        iptables -I OUTPUT 1 -p icmp --icmp-type echo-reply -j ACCEPT
-
 **The following rules should be added to the file in a row:**
-1. On  ws1 apply a strategy where a deny rule is written at the beginning and an allow rule is written at the end (this applies to points 4 and 5)
+**1. On  ws1 apply a strategy where a deny rule is written at the beginning and an allow rule is written at the end (this applies to points 4 and 5)**
 
-2. On ws2 apply a strategy where an allow rule is written at the beginning and a deny rule is written at the end (this applies to points 4 and 5)
+**2. On ws2 apply a strategy where an allow rule is written at the beginning and a deny rule is written at the end (this applies to points 4 and 5)**
 
-3. Open access on machines for port 22 (ssh) and port 80 (http)
+**3. Open access on machines for port 22 (ssh) and port 80 (http)**
 
-4. Reject  echo reply (machine must not ping, i.e. there must be a lock on OUTPUT)
+**4. Reject  echo reply (machine must not ping, i.e. there must be a lock on OUTPUT)**
 
-5. Allow echo reply (machine must be pinged)
+**5. Allow echo reply (machine must be pinged)**
 
 _/etc/firewall.sh_ 
 
@@ -338,9 +312,15 @@ _/etc/firewall.sh_
 
 ![linux](src/images/Part_4/linux4.1-4.png)
 
-`sudo ping -c 10 192.168.100.10`
+    Оба файла, ws1 и ws2, содержат набор команд iptables, которые управляют правилами брандмауэра. Целью этих команд является настройка брандмауэра на двух различных рабочих станциях (ws1 и ws2) для разрешения определенного входящего и исходящего трафика, а также блокирования определенных типов ICMP-трафика (ответов на запрос эхо). Однако существует небольшое различие в определении правил между двумя файлами.
 
-![linux](src/images/Part_4/linux4.1-4.png)
+    iptables -I OUTPUT 1 -p icmp --icmp-type echo-reply -j ACCEPT: Основное отличие состоит в этом правиле. Вместо использования iptables -A для добавления правила, здесь используется iptables -I для вставки правила на позицию 1 в цепочке OUTPUT. Это означает, что правило помещается в начало цепочки и будет разрешать исходящие пакеты ICMP ответов на запросы эхо, что фактически переопределяет предыдущее правило блокировки для этого конкретного типа ICMP-трафика.
+
+    Основное различие между двумя стратегиями заключается в том, что в ws1 присутствует избыточное правило для разрешения исходящих пакетов ICMP ответов на запросы эхо, тогда как в ws2 это избыточное правило удаляется с помощью iptables -I для вставки разрешающего правила перед правилом блокировки.
+
+![linux](src/images/Part_4/linux4.1-5.png)
+
+![linux](src/images/Part_4/linux4.1-6.png)
 
 ## 4.2. nmap utility ##
 
@@ -381,15 +361,15 @@ Network:
 
 `sudo vim /etc/netplan/00-installer-config.yaml`
 
-![linux](src/images/linux5.1-1.png)
+![linux](src/images/Part_5/linux5.1-1.png)
 
-![linux](src/images/linux5.1-2.png)
+![linux](src/images/Part_5/linux5.1-2.png)
 
-![linux](src/images/linux5.1-3.png)
+![linux](src/images/Part_5/linux5.1-3.png)
 
-![linux](src/images/linux5.1-4.png)
+![linux](src/images/Part_5/linux5.1-4.png)
 
-![linux](src/images/linux5.1-5.png)
+![linux](src/images/Part_5/linux5.1-5.png)
 
 **Restart the network service. If there are no errors, check that the machine address is correct with the `ip -4` acommand. Also ping ws22 from ws21. Similarly ping r1 from ws11.**
 
@@ -505,7 +485,7 @@ _With this approach, the forwarding will not work after the system is rebooted._
 
 ### 5.6. Using ICMP protocol in routing  ###
 
-**Run on r1 network traffic capture going through eth0 with the _tcpdump -n -i eth0 icmp_ command.**
+**Run on r1 network traffic capture going through eth0 with the `tcpdump -n -i eth0 icmp` command.**
 
 ![linux](src/images/Part_5/linux5.6-1.png)
 
