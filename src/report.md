@@ -677,3 +677,5 @@ _Before testing it is recommended to disable the NAT network interface in Virtua
 **To check if the connection worked in both of the previous steps, go to a second terminal (e.g. with the Alt + F2) and run the `telnet 127.0.0.1 [local port]` command.**
 
 ![linux](src/images/Part_8/linux8.0-4.png)
+
+![linux](src/images/Part_8/linux8.0-5.png)
